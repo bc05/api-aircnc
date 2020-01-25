@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'
 import express from 'express';
 
-import routes from "./routes";
+import routes from './routes';
 
 dotenv.config();
 
@@ -10,9 +10,8 @@ const port = process.env.APP_PORT;
 const hostname = process.env.APP_HOST;
 
 app.use(express.json());
+
 app.use(routes);
 
-app.listen(port, hostname, () => {
-    console.log(`Servidor ativo em: ${hostname}:${port}`)
-});
+app.listen(port, hostname, () => console.log(`Servidor ativo em: ${hostname}:${port}`) )
 
