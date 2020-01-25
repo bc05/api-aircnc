@@ -9,6 +9,7 @@ const app = express();
 const port = process.env.APP_PORT;
 const hostname = process.env.APP_HOST;
 
+app.use(express.json());
 app.use(routes);
 
 app.listen(port, hostname, () => {
