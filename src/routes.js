@@ -1,7 +1,10 @@
-import Router from "express";
+import { Router } from "express";
 
-const router = Router();
+import UserController from './Controllers/UserController';
 
-router.get('/', (req, res) => res.send("Rota inicial"));
+const routes = Router();
 
-export default router;
+routes.get('/users', UserController.index);
+routes.post('/users', UserController.store);    
+
+export default routes;
